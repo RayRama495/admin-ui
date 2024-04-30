@@ -1,0 +1,27 @@
+.new {
+  display: flex;
+  width: 100%;
+}
+.new .newContainer {
+  flex: 6;
+}
+.new .newContainer .top,
+.new .newContainer .bottom {
+  box-shadow: 2px 4px 10px 1px rgba(201, 201, 201, 0.47);
+  padding: 10px;
+  margin: 20px;
+  display: flex;
+}
+.new .newContainer .top h1,
+.new .newContainer .bottom h1 {
+  color: lightgray;
+}
+.new .newContainer .top .left,
+.new .newContainer .bottom .left {
+  flex: 1;
+  text-align: center;
+}
+.new .newContainer .top .right,
+.new .newContainer .bottom .right {
+  flex: 2;
+}/*# sourceMappingURL=new.css.map */
