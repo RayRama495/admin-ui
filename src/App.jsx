@@ -22,7 +22,7 @@ function App() {
               <Route path="new" element={<New />}></Route>
             <Route
               path="new"
-              element={<new inputs={userInputs} title="Add New User" />}
+              element={<New inputs={userInputs} title="Add New User" />}
               />
               </Route>
             <Route path="product">
@@ -31,7 +31,7 @@ function App() {
               <Route path="new" element={<New />}></Route>
               <Route
               path="new"
-                element={<new inputs={productInputs} title="Add New User" />}
+                element={<New inputs={productInputs} title="Add New User" />}
                 />
                 </Route>
                 </Route>
