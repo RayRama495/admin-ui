@@ -11,16 +11,12 @@ const Mylist = () => {
       <Sidebar />
       <div className="mylistContainer">
         <Navbar />
-        <div className="top">
         <div className="widgets">
         <Widget type="user"/>
         <Widget type="order"/>
         <Widget type="earning"/>
       </div>
-        </div>
-        <div className="bottom">
         <Mydatatable/>
-        </div>
       </div>
     </div>
   )

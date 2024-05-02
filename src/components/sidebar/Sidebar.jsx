@@ -41,12 +41,12 @@ const Sidebar = () => {
       <StoreIcon className="icon"></StoreIcon>
         <span>Orders</span>
       </li>
-      <li>
       <Link to="/catagories">
+      <li>
         <CategoryIcon className="icon"></CategoryIcon>
         <span>Catagories</span>
-        </Link>
       </li>
+      </Link>
       <p className="title">USER</p>
       <li>
       <AccountCircleIcon className="icon"></AccountCircleIcon>
