@@ -31,7 +31,7 @@ const Sidebar = () => {
           <span>Users</span>
         </li>
       </Link>
-      <Link to="/products">
+      <Link to="/product">
         <li>
         <PaymentIcon className="icon"></PaymentIcon>
           <span>Products</span>
@@ -41,10 +41,10 @@ const Sidebar = () => {
       <StoreIcon className="icon"></StoreIcon>
         <span>Orders</span>
       </li>
-      <Link to="/catagories">
+      <Link to="/categories">
       <li>
         <CategoryIcon className="icon"></CategoryIcon>
-        <span>Catagories</span>
+        <span>Categories</span>
       </li>
       </Link>
       <p className="title">USER</p>

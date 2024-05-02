@@ -32,9 +32,9 @@ function App() {
                 element={<New inputs={productInputs} title="Add New User" />}
                 />
                 </Route>
-                <Route path="catagories">
+                <Route path="categories">
               <Route index element={<Mylist />}></Route>
-              <Route path=":catagories" element={<Single />}></Route>
+              <Route path=":categories" element={<Single />}></Route>
                 </Route>
                 </Route>
         </Routes>
