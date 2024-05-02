@@ -4,6 +4,7 @@ import Login from "./pages/login/Login";
 import List from "./pages/list/List";
 import Single from "./pages/single/Single";
 import New from "./pages/new/New";
+import Mylist from "./pages/mylist/Mylist";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { productInputs, userInputs} from "./formsource"
 
@@ -31,6 +32,10 @@ function App() {
               path="new"
                 element={<New inputs={productInputs} title="Add New User" />}
                 />
+                </Route>
+                <Route path="catagories">
+              <Route index element={<Mylist />}></Route>
+              <Route path=":catagories" element={<Single />}></Route>
                 </Route>
                 </Route>
         </Routes>
