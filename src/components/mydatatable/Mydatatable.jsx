@@ -27,8 +27,7 @@ const actionColumn = [
     renderCell: () => {
       return (
         <div className="cellAction">
-          <Link to="/users/test" style={{ textDecoration: "none" }}>
-            <div className="viewButton"></div>
+          <Link style={{ textDecoration: "none" }}>
           </Link>
         </div>
       );
