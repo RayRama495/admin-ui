@@ -2,7 +2,7 @@ import { useState } from "react";
 import Home from "./pages/home/Home";
 import Login from "./pages/login/Login";
 import List from "./pages/list/List";
-import MyList from "./pages/mylist/MyList";
+import Mylist from "./pages/mylist/Mylist";
 import Single from "./pages/single/Single";
 import New from "./pages/new/New";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
@@ -50,7 +50,7 @@ function App() {
               />
             </Route>
             <Route path="categories">
-              <Route index element={<RequireAuth><MyList /></RequireAuth>}></Route>
+              <Route index element={<RequireAuth><Mylist /></RequireAuth>}></Route>
             </Route>
           </Route>
         </Routes>

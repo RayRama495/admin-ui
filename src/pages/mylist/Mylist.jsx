@@ -5,7 +5,7 @@ import Mydatatable from "../../components/mydatatable/Mydatatable";
 import Widget from "../../components/widget/Widget";
 
 
-const MyList = () => {
+const Mylist = () => {
   return (
     <div className="mylist">
       <Sidebar />
@@ -24,4 +24,4 @@ const MyList = () => {
   )
 }
 
-export default MyList
+export default Mylist
