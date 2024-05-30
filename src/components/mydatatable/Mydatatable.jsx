@@ -1,3 +1,4 @@
+import "../datatable/datatable.scss"
 import { DataGrid } from "@mui/x-data-grid";
 import { Link } from "react-router-dom";
 
@@ -35,11 +36,11 @@ const actionColumn = [
   },
 ];
 
-const Mydatatable = () => {
+const Mydatatable = ({title}) => {
   return (
     <div className="datatable">
       <div className="datatableTitle">
-        AllData
+        {title}
       </div>
       <DataGrid
         rows={rows}

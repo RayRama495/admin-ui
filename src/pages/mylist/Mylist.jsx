@@ -5,7 +5,7 @@ import Mydatatable from "../../components/mydatatable/Mydatatable";
 import Widget from "../../components/widget/Widget";
 
 
-const Mylist = () => {
+const MyList = () => {
   return (
     <div className="mylist">
       <Sidebar />
@@ -16,10 +16,12 @@ const Mylist = () => {
         <Widget type="order"/>
         <Widget type="earning"/>
       </div>
-        <Mydatatable/>
+      <div className="table">
+      <Mydatatable title="All Data"/>
+        </div>
       </div>
     </div>
   )
 }
 
-export default Mylist
+export default MyList
