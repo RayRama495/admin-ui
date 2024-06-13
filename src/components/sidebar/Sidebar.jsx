@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import './sidebar.scss';
 import DashboardIcon from '@mui/icons-material/Dashboard';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
@@ -9,9 +9,26 @@ import LogoutIcon from '@mui/icons-material/Logout';
 import CategoryIcon from '@mui/icons-material/Category';
 import { DarkModeContext } from "../../context/darkModeContext";
 import { useContext } from "react";
+import { signOut } from "firebase/auth";
+import { auth } from "../../firebase";
+import { AuthContext } from "../../context/AuthContext"
 
 const Sidebar = () => {
   const {dispatch} = useContext(DarkModeContext);
+
+const {dispatch : autDispatch} = useContext(AuthContext)
+  const navigate = useNavigate()
+
+  const hadleLogout = () => {
+    signOut(auth)
+    .then(() => {
+      autDispatch({type:"LOGOUT"})
+      navigate("/login")
+    })
+    .catch((error) => {
+      console.error("Logout error: ", error)
+    })
+  }
 
   return (
     <div className="sidebar">
@@ -56,7 +73,7 @@ const Sidebar = () => {
       <AccountCircleIcon className="icon"></AccountCircleIcon>
         <span>Profile</span>
       </li>
-      <li>
+      <li onClick={hadleLogout}>
         <LogoutIcon className="icon"></LogoutIcon>
         <span>Logout</span>
       </li>

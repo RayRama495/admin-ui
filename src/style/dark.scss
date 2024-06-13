@@ -47,9 +47,33 @@
     }
   
     .datatable {
+
+      *{
+        color: gray;
+      }
+      
       .datagrid {
         color: gray;
         border: none;
+  
+        .viewButton,
+        .deleteButton,
+        .cellWithStatus {
+          color: gray;
+          border: none;
+        }
+      }
+    }
+
+    .mydatatable {
+      * {
+        color: grey;
+      }
+
+      .datagrid{
+        color: gray;
+        border: none;
+        
   
         .viewButton,
         .deleteButton,
