@@ -1,13 +1,10 @@
-import "../mydatatable/mydatatable.scss"
+import "./mydatatable.scss"
 import { DataGrid } from "@mui/x-data-grid";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const columns = [
   { field: "id", headerName: "ID", width: 70 },
   { field: "firstName", headerName: "Name", width: 130 },
-  {
-    valueGetter: (value, row) => ``,
-  },
 ];
 
 const rows = [
@@ -23,30 +20,15 @@ const rows = [
   { id: 10,firstName: "Garam"},
 ];
 
-const actionColumn = [
-  {
-    field: "action",
-    headerName: "",
-    renderCell: () => {
-      return (
-        <div className="cellAction">
-          <Link to="" style={{ textDecoration: "none" }}>
-          </Link>
-        </div>
-      );
-    },
-  },
-];
-
 const Mydatatable = ({title}) => {
   return (
     <div className="mydatatable">
       <div className="mydatatableTitle">
         {title}
       </div>
-      <DataGrid className="datagrid"
+      <DataGrid
         rows={rows}
-        columns={columns.concat(actionColumn)}
+        columns={columns}
         initialState={{
           pagination: {
             paginationModel: { page: 0, pageSize: 5 },

@@ -2,7 +2,7 @@ import { useState } from "react";
 import Home from "./pages/home/Home";
 import Login from "./pages/login/Login";
 import List from "./pages/list/List";
-import Mylist from "./pages/mylist/Mylist";
+import MyList from "./pages/mylist/Mylist";
 import Single from "./pages/single/Single";
 import New from "./pages/new/New";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
@@ -11,7 +11,7 @@ import "./style/dark.scss";
 import { useContext } from "react";
 import { DarkModeContext } from "./context/darkModeContext";
 import { AuthContext } from "./context/AuthContext";
-import { userColumns,productColumns } from "./datatablesource";
+import { userColumns, productColumns } from "./datatablesource";
 
 
 function App() {
@@ -51,7 +51,7 @@ function App() {
               />
             </Route>
             <Route path="categories">
-              <Route index element={<RequireAuth><Mylist /></RequireAuth>}></Route>
+              <Route index element={<RequireAuth><MyList /></RequireAuth>}></Route>
             </Route>
           </Route>
         </Routes>
