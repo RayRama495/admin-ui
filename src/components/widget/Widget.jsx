@@ -1,7 +1,6 @@
 import "./widget.scss";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 import PersonOutlinedIcon from "@mui/icons-material/PersonOutlined";
-import AccountBalanceWalletOutlinedIcon from "@mui/icons-material/AccountBalanceWalletOutlined";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import MonetizationOnOutlinedIcon from "@mui/icons-material/MonetizationOnOutlined";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowUp";
@@ -37,10 +36,10 @@ const Widget = ({ type }) => {
       break;
     case "order":
       data = {
-        title: "ORDERS",
+        title: "Products",
         isMoney: false,
-        link: "View all orders",
-        query:"order",
+        link: "View all products",
+        query:"products",
         icon: (
           <ShoppingCartOutlinedIcon
             className="icon"
@@ -54,31 +53,14 @@ const Widget = ({ type }) => {
       break;
     case "earning":
       data = {
-        title: "EARNINGS",
-        isMoney: true,
-        link: "View net earnings",
-        query:"earning",
+        title: "Categories",
+        isMoney: false,
+        link: "View all categories",
+        query:"categories",
         icon: (
           <MonetizationOnOutlinedIcon
             className="icon"
             style={{ backgroundColor: "rgba(0, 128, 0, 0.2)", color: "green" }}
-          />
-        ),
-      };
-      break;
-    case "balance":
-      data = {
-        title: "BALANCE",
-        isMoney: true,
-        link: "See details",
-        query:"balance",
-        icon: (
-          <AccountBalanceWalletOutlinedIcon
-            className="icon"
-            style={{
-              backgroundColor: "rgba(128, 0, 128, 0.2)",
-              color: "purple",
-            }}
           />
         ),
       };

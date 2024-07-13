@@ -3,6 +3,7 @@ import Sidebar from "../../components/sidebar/Sidebar";
 import Navbar from "../../components/navbar/Navbar";
 import Chart from "../../components/chart/Chart";
 import Datatable from "../../components/datatable/Datatable";
+import Mydatatable from "../../components/mydatatable/Mydatatable";
 import { useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { doc, getDoc } from "firebase/firestore";
@@ -28,7 +29,10 @@ const Single = ({columns}) => {
           case "products":
             setData({...docSnapData, detailName : docSnapData.title}); 
             break; 
-          default: 
+            case "categories":
+            setData({...docSnapData, detailName : docSnapData.name}); 
+            break;
+            default: 
             break;
         } 
       }   
@@ -37,7 +41,7 @@ const Single = ({columns}) => {
   }, []);   
 
   const AllKeys = Object.keys(data); 
-  const keys = AllKeys.filter(e => e !== 'timeStamp' && e !== 'img' && e !== 'password' && e !== 'displayName' && e !== 'title' && e !== 'detailName')
+  const keys = AllKeys.filter(e => e !== 'timeStamp' && e !== 'img' && e !== 'password' && e !== 'displayName' && e !== 'title' && e !== 'name' && e !== 'detailName')
   
   return (
     <div className="single">
@@ -76,6 +80,7 @@ const Single = ({columns}) => {
         <div className="bottom">
           <h1 className="title">Last Transactions</h1>
           <Datatable columns={columns} />
+          <Mydatatable columns={columns}/>
         </div>
       </div>
     </div>

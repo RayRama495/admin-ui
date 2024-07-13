@@ -12,6 +12,7 @@ import { useContext } from "react";
 import { signOut } from "firebase/auth";
 import { auth } from "../../firebase";
 import { AuthContext } from "../../context/AuthContext"
+import { List } from "@mui/material";
 
 const Sidebar = () => {
   const {dispatch} = useContext(DarkModeContext);
@@ -41,13 +42,15 @@ const {dispatch : autDispatch} = useContext(AuthContext)
   <div className="center">
     <ul>
       <p className="title">MAIN</p>
+      <Link to="/home">
       <li>
       <DashboardIcon className="icon"></DashboardIcon>
         <span>Dashboard</span>
       </li>
+      </Link>
       <p className="title">LIST</p>
       <Link to="/users">
-        <li>
+        <li data-testid="user">
           <PersonIcon className="icon"></PersonIcon>
           <span>Users</span>
         </li>
@@ -65,7 +68,7 @@ const {dispatch : autDispatch} = useContext(AuthContext)
       <Link to="/categories">
       <li>
         <CategoryIcon className="icon"></CategoryIcon>
-        <span>Categories</span>
+        <span data-testid="categories">Categories</span>
       </li>
       </Link>
       <p className="title">USER</p>

@@ -136,9 +136,9 @@ const New = ({ inputs, title }) => {
               </div>
 
               {inputs.map((input) => (
-                <div className="formInput" key={input.id}>
+                <div className="Input" key={input.id}>
                   <label>{input.label}</label>
-                  <input
+                  <input 
                     id={input.id}
                     type={input.type}
                     placeholder={input.placeholder}
@@ -146,7 +146,7 @@ const New = ({ inputs, title }) => {
                   />
                 </div>
               ))}
-              <button disabled={per !== null && per < 100} type="submit">
+              <button disabled={per !== null && per < 100} type="submit" data-testid="jalan">
   Send
 </button>
             </form>
