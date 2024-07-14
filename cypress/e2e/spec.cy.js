@@ -51,6 +51,5 @@ describe('template spec', () => {
      cy.get('div.widget')
      .should('be.visible')
 
-
   })
 })

@@ -4,11 +4,11 @@ import { Link, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { collection, onSnapshot, deleteDoc, doc } from "firebase/firestore";
 import { db } from "../../firebase";
-import {categoriesColumns} from "../../datatablesource"
+import { categoriesColumns } from "../../datatablesource";
 
-const Mydatatable = ({columns}) => {
+const Mydatatable = ({ columns }) => {
   const location = useLocation();
-  const type = location.pathname.split('/')[1];
+  const type = location.pathname.split("/")[1];
 
   const actionColumn = [
     {
@@ -18,12 +18,16 @@ const Mydatatable = ({columns}) => {
       renderCell: (params) => {
         return (
           <div className="cellAction">
-            <Link to={"/" + type + "/" + params.row.id} style={{ textDecoration: "none" }}>
-            </Link>
+            <Link
+              to={"/" + type + "/" + params.row.id}
+              style={{ textDecoration: "none" }}
+            ></Link>
             <span>
               <span
                 className="deleteButton"
-                onClick={() => handleDelete(params.row.id)} data-testid="delete">
+                onClick={() => handleDelete(params.row.id)}
+                data-testid="delete"
+              >
                 Delete
               </span>
             </span>
@@ -53,7 +57,7 @@ const Mydatatable = ({columns}) => {
     return () => {
       unsub();
     };
-  }, [type]); 
+  }, [type]);
 
   const handleDelete = async (id) => {
     try {
@@ -67,12 +71,13 @@ const Mydatatable = ({columns}) => {
   return (
     <div className="mydatatable">
       <div className="mydatatableTitle">
-      {columns}  
+        {columns}
         <Link to={"/" + type + "/new"} className="link">
           Add New
         </Link>
       </div>
-      <DataGrid className="datagrid"
+      <DataGrid
+        className="datagrid"
         rows={data}
         columns={[...categoriesColumns, ...actionColumn]}
         initialState={{
